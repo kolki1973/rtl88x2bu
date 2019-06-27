@@ -27,6 +27,7 @@
 #define RTW_ALREADY				8
 #define RTW_RA_RESOLVING		9
 #define RTW_BMC_NO_NEED			10
+#define get_ds()        (KERNEL_DS)
 
 /* #define RTW_STATUS_TIMEDOUT -110 */
 
