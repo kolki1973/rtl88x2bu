@@ -2352,6 +2352,7 @@ static int cfg80211_rtw_change_iface(struct wiphy *wiphy,
 	case NL80211_IFTYPE_P2P_CLIENT:
 		is_p2p = _TRUE;
 	#endif
+  break;
 	case NL80211_IFTYPE_STATION:
 		networkType = Ndis802_11Infrastructure;
 
@@ -2361,8 +2362,8 @@ static int cfg80211_rtw_change_iface(struct wiphy *wiphy,
 				rtw_p2p_enable(padapter, P2P_ROLE_CLIENT);
 			#if !RTW_P2P_GROUP_INTERFACE
 			else if (rtw_p2p_chk_role(pwdinfo, P2P_ROLE_CLIENT)
-					|| rtw_p2p_chk_role(pwdinfo, P2P_ROLE_GO)
-			) {
+					|| rtw_p2p_chk_role(pwdinfo, P2P_ROLE_GO))
+			  {
 				/* it means remove GC/GO and change mode from GC/GO to station(P2P DEVICE) */
 				rtw_p2p_set_role(pwdinfo, P2P_ROLE_DEVICE);
 			}
@@ -2376,6 +2377,7 @@ static int cfg80211_rtw_change_iface(struct wiphy *wiphy,
 	case NL80211_IFTYPE_P2P_GO:
 		is_p2p = _TRUE;
 	#endif
+  break;
 	case NL80211_IFTYPE_AP:
 		networkType = Ndis802_11APMode;
 
