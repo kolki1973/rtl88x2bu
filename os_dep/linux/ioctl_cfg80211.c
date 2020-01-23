@@ -686,8 +686,8 @@ static int rtw_cfg80211_sync_iftype(_adapter *adapter)
 
 static u64 rtw_get_systime_us(void)
 {
-	struct timespec ts;
-	getboottime(&ts);
+	struct timespec64 ts;
+	ktime_get_boottime_ts64(&ts);
 	return ((u64)ts.tv_sec * 1000000) + ts.tv_nsec / 1000;
 }
 

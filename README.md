@@ -1,4 +1,4 @@
-## This driver works on LINUX NEXT >=20191031 and Gentoo's sys-kernel/vanilla-sources >=5.3.x
+## This driver works on LINUX NEXT >=20200123
 
 ## Realtek 802.11ac (rtl8812bu)
 
